@@ -5,7 +5,7 @@
            xsi:type="MailApp">
 
   <Id>f68c2f39-eda4-49b0-bb87-90222a90deec</Id>
-  <Version>1.0.0.4</Version>
+  <Version>1.0.0.5</Version>
   <ProviderName>Ray Security</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Ray DLP PoC"/>
@@ -63,7 +63,7 @@
               <LaunchEvents>
                 <LaunchEvent Type="OnMessageSend"
                              FunctionName="onMessageSendHandler"
-                             SendMode="PromptUser"/>
+                             SendMode="SoftBlock"/>
               </LaunchEvents>
               <SourceLocation resid="WebViewRuntime.Url"/>
             </ExtensionPoint>
