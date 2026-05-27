@@ -10,12 +10,12 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Ray DLP PoC"/>
   <Description DefaultValue="Smart Alerts PoC — drops every outbound message and shows a dialog."/>
-  <IconUrl DefaultValue="https://YOUR_HOST/icon-64.png"/>
-  <HighResolutionIconUrl DefaultValue="https://YOUR_HOST/icon-128.png"/>
-  <SupportUrl DefaultValue="https://YOUR_HOST/"/>
+  <IconUrl DefaultValue="https://shakedsharyray.github.io/ray-dlp-poc/icon-64.png"/>
+  <HighResolutionIconUrl DefaultValue="https://shakedsharyray.github.io/ray-dlp-poc/icon-128.png"/>
+  <SupportUrl DefaultValue="https://shakedsharyray.github.io/ray-dlp-poc/"/>
 
   <AppDomains>
-    <AppDomain>https://YOUR_HOST</AppDomain>
+    <AppDomain>https://shakedsharyray.github.io/ray-dlp-poc</AppDomain>
   </AppDomains>
 
   <Hosts>
@@ -31,7 +31,7 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://YOUR_HOST/commands.html"/>
+        <SourceLocation DefaultValue="https://shakedsharyray.github.io/ray-dlp-poc/commands.html"/>
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
@@ -67,7 +67,7 @@
       </Hosts>
       <Resources>
         <bt:Urls>
-          <bt:Url id="Commands.Url" DefaultValue="https://YOUR_HOST/commands.html"/>
+          <bt:Url id="Commands.Url" DefaultValue="https://shakedsharyray.github.io/ray-dlp-poc/commands.html"/>
         </bt:Urls>
       </Resources>
     </VersionOverrides>
