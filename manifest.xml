@@ -5,7 +5,7 @@
            xsi:type="MailApp">
 
   <Id>f68c2f39-eda4-49b0-bb87-90222a90deec</Id>
-  <Version>1.0.0.0</Version>
+  <Version>1.0.0.1</Version>
   <ProviderName>Ray Security</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Ray DLP PoC"/>
@@ -15,7 +15,7 @@
   <SupportUrl DefaultValue="https://shakedsharyray.github.io/ray-dlp-poc/"/>
 
   <AppDomains>
-    <AppDomain>https://shakedsharyray.github.io/ray-dlp-poc</AppDomain>
+    <AppDomain>https://shakedsharyray.github.io</AppDomain>
   </AppDomains>
 
   <Hosts>
@@ -37,7 +37,7 @@
     </Form>
   </FormSettings>
 
-  <Permissions>ReadWriteMailbox</Permissions>
+  <Permissions>ReadWriteItem</Permissions>
 
   <Rule xsi:type="RuleCollection" Mode="Or">
     <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
@@ -52,6 +52,11 @@
       </Requirements>
       <Hosts>
         <Host xsi:type="MailHost">
+          <Runtimes>
+            <Runtime resid="WebViewRuntime.Url">
+              <Override type="javascript" resid="JSRuntime.Url"/>
+            </Runtime>
+          </Runtimes>
           <DesktopFormFactor>
             <FunctionFile resid="Commands.Url"/>
             <ExtensionPoint xsi:type="LaunchEvent">
@@ -60,7 +65,7 @@
                              FunctionName="onMessageSendHandler"
                              SendMode="PromptUser"/>
               </LaunchEvents>
-              <SourceLocation resid="Commands.Url"/>
+              <SourceLocation resid="WebViewRuntime.Url"/>
             </ExtensionPoint>
           </DesktopFormFactor>
         </Host>
@@ -68,7 +73,15 @@
       <Resources>
         <bt:Urls>
           <bt:Url id="Commands.Url" DefaultValue="https://shakedsharyray.github.io/ray-dlp-poc/commands.html"/>
+          <bt:Url id="WebViewRuntime.Url" DefaultValue="https://shakedsharyray.github.io/ray-dlp-poc/commands.html"/>
+          <bt:Url id="JSRuntime.Url" DefaultValue="https://shakedsharyray.github.io/ray-dlp-poc/launchevent.js"/>
         </bt:Urls>
+        <bt:ShortStrings>
+          <bt:String id="GroupLabel" DefaultValue="Ray DLP"/>
+        </bt:ShortStrings>
+        <bt:LongStrings>
+          <bt:String id="GroupLabel.Description" DefaultValue="Ray DLP add-in"/>
+        </bt:LongStrings>
       </Resources>
     </VersionOverrides>
   </VersionOverrides>
