@@ -1,5 +1,3 @@
-Office.onReady();
-
 function onMessageSendHandler(event) {
   event.completed({
     allowEvent: false,
@@ -10,4 +8,6 @@ function onMessageSendHandler(event) {
   });
 }
 
-Office.actions.associate("onMessageSendHandler", onMessageSendHandler);
+Office.onReady(() => {
+  Office.actions.associate("onMessageSendHandler", onMessageSendHandler);
+});
