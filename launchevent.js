@@ -1,6 +1,3 @@
-// Outlook fires OnMessageSend when the user clicks Send.
-// We always block, with a dialog message. This is the entire DLP logic.
-
 function onMessageSendHandler(event) {
   event.completed({
     allowEvent: false,
@@ -11,5 +8,6 @@ function onMessageSendHandler(event) {
   });
 }
 
-// Required: register the function name so Office can invoke it.
-Office.actions.associate("onMessageSendHandler", onMessageSendHandler);
+Office.onReady(() => {
+  Office.actions.associate("onMessageSendHandler", onMessageSendHandler);
+});
