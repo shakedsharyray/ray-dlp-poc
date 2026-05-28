@@ -1,0 +1,5 @@
+name = "ray-dlp-classifier"
+main = "src/index.js"
+compatibility_date = "2026-05-28"
+
+# Workers Free tier: 100K requests/day. Plenty for PoC.
