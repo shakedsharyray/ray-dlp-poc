@@ -31,7 +31,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-BLOCK_TERM = "bamba"
+BLOCK_TERMS = ["bamba", "bisli"]
 
 
 class Recipient(BaseModel):
@@ -84,11 +84,12 @@ def classify(msg: ClassifyRequest) -> ClassifyResponse:
                  a.name, a.size, a.contentType)
 
     haystack = ((msg.subject or "") + " " + (msg.body or "")).lower()
-    if BLOCK_TERM in haystack:
+    matched = next((term for term in BLOCK_TERMS if term in haystack), None)
+    if matched:
         return ClassifyResponse(
             action="block",
             reason=(
-                f"Blocked by Ray DLP: this message contains the term '{BLOCK_TERM}'. "
+                f"Blocked by Ray DLP: this message contains the term '{matched}'. "
                 "Please remove it and try again."
             ),
         )
