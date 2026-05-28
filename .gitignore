@@ -1,0 +1,6 @@
+classifier/.venv/
+classifier/__pycache__/
+classifier/**/__pycache__/
+worker/node_modules/
+.DS_Store
+*.pyc
